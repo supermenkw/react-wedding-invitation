@@ -10,8 +10,9 @@ import image8 from '../../assets/images/14.jpg'
 import image9 from '../../assets/images/15.jpg'
 import { Backdrop, Box, Fade, Grid, Modal } from '@mui/material';
 import { PhotosWrapper, VideoSection } from './styled-components';
-import BackgroundImage from '../../assets/images/video-thumbnail.jpg'
+import BackgroundImage from '../../assets/images/video-thumbnail-2.jpg'
 import { YoutubeEmbed } from '../../components/youtube-embeded';
+import { trackWindowScroll } from 'react-lazy-load-image-component';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -23,45 +24,47 @@ const style = {
   boxShadow: 24,
 };
 
-export const GallerySection = () => {
+const GallerySection = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const placeholderImage = 'https://placehold.co/400?text=Image'
+  const placeholderImage2 = 'https://placehold.co/700x500?text=Video+Thumb'
 
     return <Box>
       <Grid container
           columns={12}  
           direction="row"
       >
-        <Grid item xs={12} md={12}>
-          <VideoSection src={BackgroundImage} className='video-thumb' style={{ cursor: 'pointer' }} onClick={() => handleOpen()} />
+        <Grid item xs={12} md={12} className='video-thumb-wrapper'>
+          <VideoSection src={BackgroundImage} placeholderSrc={placeholderImage2} alt='video label' className='video-thumb' style={{ cursor: 'pointer' }} onClick={() => handleOpen()} />
         </Grid>
         <Grid item xs={4} md={4}>
-          <PhotosWrapper src={image1} data-aos="fade-down-right" />
+          <PhotosWrapper src={image1} placeholderSrc={placeholderImage} alt='image 1' />
         </Grid>
         <Grid item xs={4} md={4}>
-          <PhotosWrapper src={image2} data-aos="fade-down" />
+          <PhotosWrapper src={image2} placeholderSrc={placeholderImage} alt='image 2' />
         </Grid>
         <Grid item xs={4} md={4}>
-          <PhotosWrapper src={image3} data-aos="fade-down-left" />
+          <PhotosWrapper src={image3} placeholderSrc={placeholderImage} alt='image 3' />
         </Grid>
         <Grid item xs={4} md={4}>
-          <PhotosWrapper src={image4} data-aos="fade-right" />
+          <PhotosWrapper src={image4} placeholderSrc={placeholderImage} alt='image 4' />
         </Grid>
         <Grid item xs={4} md={4}>
-          <PhotosWrapper src={image5} data-aos="fade-up" />
+          <PhotosWrapper src={image5} placeholderSrc={placeholderImage} alt='image 5' />
         </Grid>
         <Grid item xs={4} md={4}>
-          <PhotosWrapper src={image6} data-aos="fade-left" />
+          <PhotosWrapper src={image6} placeholderSrc={placeholderImage} alt='image 6' />
         </Grid>
         <Grid item xs={4} md={4}>
-          <PhotosWrapper src={image7} data-aos="fade-up-right" />
+          <PhotosWrapper src={image7} placeholderSrc={placeholderImage} alt='image 7' />
         </Grid>
         <Grid item xs={4} md={4}>
-          <PhotosWrapper src={image9} data-aos="fade-up" />
+          <PhotosWrapper src={image9} placeholderSrc={placeholderImage} alt='image 8' />
         </Grid>
         <Grid item xs={4} md={4}>
-          <PhotosWrapper src={image8} data-aos="fade-up-left" />
+          <PhotosWrapper src={image8} placeholderSrc={placeholderImage} alt='image 9' />
         </Grid>
       </Grid>
       <Modal
@@ -85,3 +88,5 @@ export const GallerySection = () => {
       </Modal>
     </Box>
 }
+
+export default trackWindowScroll(GallerySection)

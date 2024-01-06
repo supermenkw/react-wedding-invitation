@@ -239,6 +239,10 @@ ul.MuiImageList-root {
     width: 90%;
   }
 }
+
+.video-thumb-wrapper > .lazy-load-image-background {
+  width: 100% !important;
+}
 /* .wishes-section:before {
   width: 0px;
   height: 0px;

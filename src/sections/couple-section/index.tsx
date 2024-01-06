@@ -15,6 +15,7 @@ export const CoupleSection: React.FC<Props> = ({isOpened, guest}) => {
     const targetRef2: any = useRef(null);
     const [isVisible1, setIsVisible1] = useState(false);
     const [isVisible2, setIsVisible2] = useState(false);
+    const placeholderImage = 'https://placehold.co/400?text=Image'
 
     useEffect(() => {
       const options = {
@@ -83,11 +84,11 @@ export const CoupleSection: React.FC<Props> = ({isOpened, guest}) => {
                 <Grid item xs={12} md={5} display='flex' justifyContent='center' alignItems='center'>
                   <BoxCouple ref={targetRef1} className={`${isVisible1 ? 'BoxCoupleLightOn' : 'BoxCoupleLightOff'}`}>
                       <Box display='flex' justifyContent='center'>
-                          <BrideImage src={SelarasPhoto} />
+                          <BrideImage src={SelarasPhoto} alt="selaras img" placeholderSrc={placeholderImage}/>
                       </Box>
                       <Typography align="center" marginTop={2} className={`molde-condensed-bold ${isOpened ? 'animate-text-focus-in-1s' : ''}`} fontSize={{ md: '20px' }}>PLAYER 1</Typography>
                       <Typography align="center" fontSize={{ md: '18px' }} fontWeight={600} data-aos="fade-up" data-aos-duration="250">SELARAS AURA MAHARDHIKA</Typography>
-                      <Typography color='#CADADD' align="center" data-aos="fade-up" data-aos-duration="500" fontSize={{ md: '16px' }} onClick={() => window.open("https://www.instagram.com/selarasam/")} style={{ cursor: 'pointer' }} marginBottom={2}>@selarasam</Typography>
+                      <Typography color='#CADADD' align="center" fontSize={{ md: '16px' }} onClick={() => window.open("https://www.instagram.com/selarasam/")} style={{ cursor: 'pointer' }} marginBottom={2} data-aos="fade-up" data-aos-duration="500">@selarasam</Typography>
                   </BoxCouple>
                 </Grid>
                 <Grid item xs={12} md={2}>
@@ -97,11 +98,11 @@ export const CoupleSection: React.FC<Props> = ({isOpened, guest}) => {
                 <Grid item xs={12} md={5} display='flex' justifyContent='center' alignItems='center'>
                     <BoxCouple ref={targetRef2} className={`${isVisible2 ? 'BoxCoupleLightOn' : 'BoxCoupleLightOff'}`}>
                       <Box display='flex' justifyContent='center'>
-                          <BrideImage src={AnggaPhoto} />
+                          <BrideImage src={AnggaPhoto} alt="angga img" placeholderSrc={placeholderImage}/>
                       </Box>
                       <Typography align="center" marginTop={2} className={`molde-condensed-bold ${isOpened ? 'animate-text-focus-in-1s' : ''}`} fontSize={{ md: '20px' }}>PLAYER 2</Typography>
-                      <Typography align="center" data-aos="fade-up" data-aos-duration="250" fontSize={{ md: '18px' }} fontWeight={600}>ANGGA M GINANJAR</Typography>
-                      <Typography color='#CADADD' align="center" data-aos="fade-up" data-aos-duration="500" fontSize={{ md: '16px' }} onClick={() => window.open("https://www.instagram.com/supermenkw/")} style={{ cursor: 'pointer' }} marginBottom={2}>@supermenkw</Typography>
+                      <Typography align="center" fontSize={{ md: '18px' }} fontWeight={600} data-aos="fade-up" data-aos-duration="250">ANGGA M GINANJAR</Typography>
+                      <Typography color='#CADADD' align="center" fontSize={{ md: '16px' }} onClick={() => window.open("https://www.instagram.com/supermenkw/")} style={{ cursor: 'pointer' }} marginBottom={2} data-aos="fade-up" data-aos-duration="500">@supermenkw</Typography>
                     </BoxCouple>
                 </Grid>
             </Grid>

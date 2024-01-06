@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Box } from "@mui/material";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
-export const BrideImage = styled.img`
+export const BrideImage = styled(LazyLoadImage)`
     width: 100%;
     height: 300px;
     object-fit: cover;

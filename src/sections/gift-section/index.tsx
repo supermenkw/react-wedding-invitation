@@ -14,7 +14,7 @@ export const GiftSection = () => {
     return <GiftSectionWrapper>
         <Grid container columns={12} paddingX={2} paddingY={3}>
             <Grid item xs={12} paddingTop={0} marginBottom={4}>
-                <Typography align='center' className='cover-couple-title molde-condensed-bold-italic' data-aos="fade-down" fontSize={{ xs: '1.5rem', md: '2rem' }}>WEDDING GIFT</Typography>
+                <Typography align='center' className='cover-couple-title molde-condensed-bold-italic' fontSize={{ xs: '1.5rem', md: '2rem' }}>WEDDING GIFT</Typography>
             </Grid>
             <Grid item xs={12} md={6} marginBottom={{ xs: 4 }}>
                 <Stack direction='column' justifyContent='center' alignItems='center' data-aos="fade-right">

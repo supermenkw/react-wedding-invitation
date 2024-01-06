@@ -8,13 +8,13 @@ import { CoverSection } from "../../sections/cover-section";
 import { CoupleSection } from "../../sections/couple-section";
 import { CountdownSection } from "../../sections/countdown-section";
 import { TheDateSection } from "../../sections/thedate-section";
-import { GallerySection } from "../../sections/gallery-section";
+import GallerySection from "../../sections/gallery-section";
 import { GiftSection } from "../../sections/gift-section";
 import { WishesSection } from "../../sections/wishes-section";
 import { FooterSection } from "../../sections/footer-section";
 import { useNavigate, useParams } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 export const GuestPage = () => {
     const [isOpened, setIsOpened] = useState<boolean>(false)
@@ -80,15 +80,17 @@ export const GuestPage = () => {
             <Box className='website-cover'>
                 <CoverSection setIsOpened={setIsOpened} guest={guest} audioRef={audioRef} isPlayingMusic={isPlayingMusic} setIsPlayingMusic={setIsPlayingMusic} isExpandedMusic={isExpandedMusic} setIsExpandedMusic={setIsExpandedMusic} onHoverMusic={onHoverMusic}/>
             </Box>
-            {
-              guest && guest.name && <CoupleSection isOpened={isOpened} guest={guest.name}/>
-            }
-            <CountdownSection />
-            <TheDateSection />
-            <GallerySection />
-            <GiftSection />
-            <WishesSection guest={guest} />
-            <FooterSection />
+            
+              {
+                guest && guest.name && <LazyLoadComponent><CoupleSection isOpened={isOpened} guest={guest.name}/></LazyLoadComponent>
+              }
+              <CountdownSection />
+              <TheDateSection />
+              <LazyLoadComponent><GallerySection /></LazyLoadComponent>
+              <GiftSection />
+              <WishesSection guest={guest} />
+              <FooterSection />
+            
             <ToastContainer
               position="top-center"
               autoClose={5000}

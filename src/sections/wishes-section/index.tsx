@@ -117,7 +117,7 @@ export const WishesSection: React.FC<Props> = ({guest}) => {
             <Stack direction='column' justifyContent='flex-start' spacing={2} width='100%'>
                 {
                     !!wishes.filter(d => d.message).length && wishes.filter(d => d.message).slice(0, numWishesToShow).map((wish: any, index) => {
-                        return <Card key={`${wish.name}_${index + 1}`} data-aos="flip-down" data-aos-duration="500">
+                        return <Card key={`${wish.name}_${index + 1}`}  >
                             <CardContent>
                                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>{wish.userName}</Typography>
                                 <Typography color='#000' sx={{ mb: 1.5 }}>{wish.message}</Typography>

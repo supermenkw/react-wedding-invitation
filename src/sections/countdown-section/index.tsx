@@ -3,7 +3,7 @@ import { Typography, Stack } from "@mui/material"
 import Countdown from 'react-countdown';
 import { CountdownItem } from "../../components/countdown";
 import { ParallaxBanner } from "react-scroll-parallax";
-import BackgroundImage from '../../assets/images/save-thedate-background-1.jpg'
+import BackgroundImage from '../../assets/images/save-thedate-background-2.jpg'
 
 export const CountdownSection = () => {
 
