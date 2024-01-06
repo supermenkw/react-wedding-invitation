@@ -5,69 +5,42 @@ import { ToastContainer, toast } from 'react-toastify';
 import { GiftSectionWrapper } from './styled-components'
 import mandiriLogo from '../../assets/images/LOGO-MANDIRI.webp'
 import giftLogo from '../../assets/images/gift-icon_34411-300x300-1.webp'
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 export const GiftSection = () => {
-    const value = '1570004475035';
-    const alamat = 'Jl. Gunung Rahayu Dalam 2 No 11, Pasir Kaliki, Cimahi Utara';
+    const value = '1570004475035 ';
+    const alamat = 'The Garden Sariwangi Kav II no 4, Sariwangi, Parongpong, Bandung Barat, 40559 ';
 
     return <GiftSectionWrapper>
         <Grid container columns={12} paddingX={2} paddingY={3}>
-            <Grid item xs={12} paddingTop={0}>
-                <Typography variant='h5' align='center' className='cover-couple-title' data-aos="fade-down">Wedding Gift</Typography>
+            <Grid item xs={12} paddingTop={0} marginBottom={4}>
+                <Typography align='center' className='cover-couple-title molde-condensed-bold-italic' data-aos="fade-down" fontSize={{ xs: '1.5rem', md: '2rem' }}>WEDDING GIFT</Typography>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} marginBottom={{ xs: 4 }}>
                 <Stack direction='column' justifyContent='center' alignItems='center' data-aos="fade-right">
                     <img style={{ width: '150px' }} src={mandiriLogo} />
                     <Typography align='center'>Selaras Aura Mahardhika</Typography>
                     <Stack direction='row' justifyContent='center' alignItems='center'>
                         <Typography align='center'>
                             {value}
+                            <CopyToClipboard text={alamat} onCopy={() => toast(toast(<Typography textAlign='center'>Copied</Typography>))}>
+                                <ContentCopyIcon />
+                            </CopyToClipboard>
                         </Typography>
-                        <CopyToClipboard text={value}>
-                            <Button onClick={() => {
-                                toast.success('Copied')
-                            }}>Copy</Button>
-                        </CopyToClipboard>
-                        <ToastContainer
-                            position="top-center"
-                            autoClose={3000}
-                            hideProgressBar={false}
-                            newestOnTop={false}
-                            closeOnClick
-                            rtl={false}
-                            pauseOnFocusLoss
-                            draggable
-                            pauseOnHover
-                            theme="colored"
-                        />
                     </Stack>
                 </Stack>
             </Grid>
             <Grid item xs={12} md={6}>
             <Stack direction='column' justifyContent='center' alignItems='center' data-aos="fade-left">
                     <img style={{ width: '50px' }} src={giftLogo} />
-                    <Typography align='center'>Kostan Selaras</Typography>
+                    <Typography align='center'>Rumah</Typography>
                     <Stack direction='row' justifyContent='center' alignItems='center'>
                         <Typography align='center'>
-                            {alamat}
+                            {alamat} 
+                            <CopyToClipboard text={alamat} onCopy={() => toast(<Typography textAlign='center'>Copied</Typography>)}>
+                                <ContentCopyIcon />
+                            </CopyToClipboard>
                         </Typography>
-                        <CopyToClipboard text={alamat}>
-                            <Button onClick={() => {
-                                toast.success('Copied')
-                            }}>Copy</Button>
-                        </CopyToClipboard>
-                        <ToastContainer
-                            position="top-center"
-                            autoClose={3000}
-                            hideProgressBar={false}
-                            newestOnTop={false}
-                            closeOnClick
-                            rtl={false}
-                            pauseOnFocusLoss
-                            draggable
-                            pauseOnHover
-                            theme="colored"
-                        />
                     </Stack>
                 </Stack>
             </Grid>

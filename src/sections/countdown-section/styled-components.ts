@@ -1,9 +1,14 @@
 import styled, { keyframes } from "styled-components";
 import { Typography } from '@mui/material'
+import BackgroundImage from '../../assets/images/save-thedate-background-1.jpg'
 
 export const BackgroundCountdownSection = styled.section`
-    background: #656A4C;
-    color: #E9ECE5
+    background-image: linear-gradient(0deg, rgba(30, 30, 55, 0.6), rgba(30, 30, 55, 0.6)), url('${BackgroundImage}') !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 16rem;
+    color: #fff
 `;
 
 const TheDateTextAnimation = keyframes`

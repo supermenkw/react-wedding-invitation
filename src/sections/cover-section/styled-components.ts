@@ -1,12 +1,12 @@
 import { Box, Button, Typography } from '@mui/material';
 import styled, { keyframes } from 'styled-components';
-import BackgroundImage from '../../assets/images/example-cover.jpg'
+import BackgroundImage from '../../assets/images/cover.jpg'
 
 export const CoverSectionWrapper = styled.section`
-    background-image: url('${BackgroundImage}') !important;
-    background-size: cover;
-    background-position: center center;
+    background-image: linear-gradient(0deg, rgba(30, 30, 55, 0.6), rgba(30, 30, 55, 0.6)), url('${BackgroundImage}') !important;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top; 
     background-attachment: fixed;
     position: fixed;
     z-index: 1050;
@@ -26,8 +26,14 @@ export const CoverSectionWrapper = styled.section`
         left: 0;
         width: 100%;
         height: 100%;
-        pointer-events: none; /* Allows clicks to go through the overlay */
+        pointer-events: none;
     }
+`
+
+export const neonPurpleTextStyleProps = `
+  color: #fff;
+  filter:
+  drop-shadow(0 0 1px #fff) drop-shadow(0 0 2px #fff) drop-shadow(0 0 3px #bc13fe) drop-shadow(0 0 5px #bc13fe)
 `
 
 export const focusInExpandAnimation = keyframes`
@@ -53,9 +59,16 @@ export const GreetingSection = styled(Box)`
     animation: ${focusInExpandAnimation} .8s cubic-bezier(.215,.61,.355,1.000) both;
 `
 
-export const CoupleNameSection = styled(Box)`
+export const pulsateAnimation = keyframes`    
+  to {
+    filter: drop-shadow(0 0 0.5px #fff) drop-shadow(0 0 1px #fff) drop-shadow(0 0 1.5px #bc13fe) drop-shadow(0 0 2.5px #bc13fe);
+  }
+`
+
+export const CoupleNameSection = styled(Typography)`
     font-size: 3rem;
-    animation: ${focusInExpandAnimation} .8s cubic-bezier(.215,.61,.355,1.000) both;
+    color: #fff;
+    animation: ${pulsateAnimation} 1.5s infinite alternate; 
 `
 
 export const TrackingInExpandAnimation = keyframes`
@@ -68,15 +81,35 @@ export const TrackingInExpandAnimation = keyframes`
 `
 
 export const HastagSection = styled.div`
-    animation: ${TrackingInExpandAnimation} .8s cubic-bezier(.215,.61,.355,1.000) both
+  ${neonPurpleTextStyleProps}
 `
 
 export const DateSection = styled.div`
-    animation: ${TrackingInExpandAnimation} .7s cubic-bezier(.215,.61,.355,1.000) both
+  ${neonPurpleTextStyleProps}
 `
 
 export const ButtonInvitation = styled(Button)`
     animation: ${TrackingInExpandAnimation} .6s cubic-bezier(.215,.61,.355,1.000) both
+    position: relative;
+    background: #fff;
+    text-transform: uppercase;
+    transition: .5s;
+    text-align: center;
+    
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 5px 5px rgba(188, 19, 254,.3),
+                  0 0 10px 15px rgba(188, 19, 254,.2),
+                  0 0 15px 15px rgba(188, 19, 254,.1);
+      color: #440000;
+      background: #fff;
+    }
+    
+    &:active {
+      transition-delay: unset;
+      transition-duration: .25;
+      transform: scale(.95);
+    }
 `
 
 export const InvitedPeople = styled(Typography)`
@@ -96,3 +129,4 @@ export const floatAnimation = keyframes`
 export const FloatingIcon = styled(Box)`
   animation: ${floatAnimation} 2s ease-in-out infinite;
 `;
+

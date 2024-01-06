@@ -22,6 +22,7 @@ export const CountdownItem: React.FC<Props> = ({ days, hours, minutes, seconds, 
 
     // Render a countdown
     return <Grid container
+            color='#fff'
             rowSpacing={4}
             columns={12}  
             direction="row"
@@ -30,20 +31,20 @@ export const CountdownItem: React.FC<Props> = ({ days, hours, minutes, seconds, 
             data-aos='fade-up'
             paddingX={{ xs: 0, md: 30 }}>
                 <Grid item md={3} className='time-wrapper'>
-                    <Typography align='center' variant='h4'>{days}</Typography>
-                    <Typography align='center' variant='h5'>Hari</Typography>
+                    <Typography align='center' variant='h4' className='molde-condensed-bold'>{days}</Typography>
+                    <Typography align='center' variant='h5' className='molde-condensed-bold'>HARI</Typography>
                 </Grid>
                 <Grid item md={3} className='time-wrapper'>
-                    <Typography align='center' variant='h4'>{hours}</Typography>
-                    <Typography align='center' variant='h5'>Jam</Typography>
+                    <Typography align='center' variant='h4' className='molde-condensed-bold'>{hours}</Typography>
+                    <Typography align='center' variant='h5' className='molde-condensed-bold'>JAM</Typography>
                 </Grid>
                 <Grid item md={3} className='time-wrapper'>
-                    <Typography align='center' variant='h4'>{minutes}</Typography>
-                    <Typography align='center' variant='h5'>Menit</Typography>
+                    <Typography align='center' variant='h4' className='molde-condensed-bold'>{minutes}</Typography>
+                    <Typography align='center' variant='h5' className='molde-condensed-bold'>MENIT</Typography>
                 </Grid>
                 <Grid item md={3} className='time-wrapper'>
-                    <Typography align='center' variant='h4'>{seconds}</Typography>
-                    <Typography align='center' variant='h5'>Detik</Typography>
+                    <Typography align='center' variant='h4' className='molde-condensed-bold'>{seconds}</Typography>
+                    <Typography align='center' variant='h5' className='molde-condensed-bold'>DETIK</Typography>
                 </Grid>
     </Grid>;
   }
