@@ -2,7 +2,7 @@ import { Grid, Box, Typography } from "@mui/material"
 import React, { useRef, useState, useEffect } from "react"
 import AnggaPhoto from '../../assets/images/pp1.jpg'
 import SelarasPhoto from '../../assets/images/pp2.jpg'
-import { BoxCouple, CircleImage } from "./styled-components"
+import { BoxCouple, BrideImage } from "./styled-components"
 import SALogo from '../../assets/images/SA_white.png'
 
 type Props = {
@@ -83,7 +83,7 @@ export const CoupleSection: React.FC<Props> = ({isOpened, guest}) => {
                 <Grid item xs={12} md={5} display='flex' justifyContent='center' alignItems='center'>
                   <BoxCouple ref={targetRef1} className={`${isVisible1 ? 'BoxCoupleLightOn' : 'BoxCoupleLightOff'}`}>
                       <Box display='flex' justifyContent='center'>
-                          <CircleImage src={SelarasPhoto} />
+                          <BrideImage src={SelarasPhoto} />
                       </Box>
                       <Typography align="center" marginTop={2} className={`molde-condensed-bold ${isOpened ? 'animate-text-focus-in-1s' : ''}`} fontSize={{ md: '20px' }}>PLAYER 1</Typography>
                       <Typography align="center" fontSize={{ md: '18px' }} fontWeight={600} data-aos="fade-up" data-aos-duration="250">SELARAS AURA MAHARDHIKA</Typography>
@@ -97,7 +97,7 @@ export const CoupleSection: React.FC<Props> = ({isOpened, guest}) => {
                 <Grid item xs={12} md={5} display='flex' justifyContent='center' alignItems='center'>
                     <BoxCouple ref={targetRef2} className={`${isVisible2 ? 'BoxCoupleLightOn' : 'BoxCoupleLightOff'}`}>
                       <Box display='flex' justifyContent='center'>
-                          <CircleImage src={AnggaPhoto} />
+                          <BrideImage src={AnggaPhoto} />
                       </Box>
                       <Typography align="center" marginTop={2} className={`molde-condensed-bold ${isOpened ? 'animate-text-focus-in-1s' : ''}`} fontSize={{ md: '20px' }}>PLAYER 2</Typography>
                       <Typography align="center" data-aos="fade-up" data-aos-duration="250" fontSize={{ md: '18px' }} fontWeight={600}>ANGGA M GINANJAR</Typography>

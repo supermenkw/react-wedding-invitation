@@ -1,10 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import firebase from '../../firebase/firebase';
 import { Box, Button, Typography } from '@mui/material';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import { ButtonInvitation, CoupleNameSection, CoverSectionWrapper, DateSection, FloatingIcon, HastagSection, InvitedPeople } from './styled-components';
+import {CoverSectionWrapper } from './styled-components';
 import { iusers } from '../../interface/iusers';
-import SALogo from '../../assets/images/SA_white.png'
 import { convertObjToArray } from '../../helper/object';
 
 type Props = {

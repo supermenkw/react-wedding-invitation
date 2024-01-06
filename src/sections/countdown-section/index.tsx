@@ -1,17 +1,11 @@
-import React, { useEffect } from "react"
-import { Typography, Stack, Box,  } from "@mui/material"
-import { BackgroundCountdownSection, TheDateText } from "./styled-components"
+import React from "react"
+import { Typography, Stack } from "@mui/material"
 import Countdown from 'react-countdown';
 import { CountdownItem } from "../../components/countdown";
-import SaveTheDateGif from '../../assets/images/save-the-date.gif'
 import { ParallaxBanner } from "react-scroll-parallax";
 import BackgroundImage from '../../assets/images/save-thedate-background-1.jpg'
 
-type Props = {
-    isOpened: boolean
-}
-
-export const CountdownSection: React.FC<Props> = ({ isOpened }) => {
+export const CountdownSection = () => {
 
     return  <ParallaxBanner
       layers={[{ image: BackgroundImage, speed: -15 }]}

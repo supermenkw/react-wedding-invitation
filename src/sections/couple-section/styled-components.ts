@@ -1,22 +1,12 @@
 import styled from "styled-components";
 import { Box } from "@mui/material";
 
-export const neonPurpleTextStyleProps = `
-  color: #fff;
-  }
-`
-
-export const CircleImage = styled.img`
+export const BrideImage = styled.img`
     width: 100%;
     height: 300px;
     object-fit: cover;
     border-radius: 5px 5px 0px 0px;
 `
-
-export const CoupleSectionInfo = styled.section`
-    background: #677360;
-`
-
 
 export const BoxCouple = styled(Box)`
   background-color: transparent;

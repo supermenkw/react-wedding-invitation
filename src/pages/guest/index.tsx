@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { getStringAfterLastSlash } from "../../helper/string";
 import { iusers } from "../../interface/iusers";
 import AOS from "aos";
 import firebase from '../../firebase/firebase';
@@ -14,7 +13,6 @@ import { GiftSection } from "../../sections/gift-section";
 import { WishesSection } from "../../sections/wishes-section";
 import { FooterSection } from "../../sections/footer-section";
 import { useNavigate, useParams } from "react-router-dom";
-import { VideoSection } from "../../sections/video-section";
 import { ToastContainer } from "react-toastify";
 
 
@@ -85,7 +83,7 @@ export const GuestPage = () => {
             {
               guest && guest.name && <CoupleSection isOpened={isOpened} guest={guest.name}/>
             }
-            <CountdownSection isOpened={isOpened} />
+            <CountdownSection />
             <TheDateSection />
             <GallerySection />
             <GiftSection />
